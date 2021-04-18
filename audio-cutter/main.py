@@ -5,4 +5,3 @@ from services.cli import cli
 def main():
     args = cli()
     cut_audio_into_parts(**args)
-    print("Pronto, corno!")

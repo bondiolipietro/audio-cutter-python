@@ -20,6 +20,28 @@ output_format // the format of the audio files that will be generated, you can f
 
 Few days ago I was on a Discord call with some friends and someone had the idea of hear podcasts together, but apparently Spotify does not allow podcasts to be executed on Discord (it only allow musics), and the podcast we wanted to hear is hosted only on spotify (NerdCast). After few minutes googling we found a workaround: Groovy (music bot) accepts users to send mp3 files to play on discord (_noice👍_), but another problem came to us: non-Nitro users of Discord can't send files larger than 8MB, so we had to split the podcast files into smaller parts and send it one by one. So, in short, i just made this script to automate the process of splitting the podcast file.
 
+## Notes
+
+'Pydub' requires installation of ffmpeg libraries, so if you're using Windows you can follow [this tutorial](https://websetnet.net/how-to-install-ffmpeg-on-windows-10-and-add-it-to-windows-path/). If you're using linux:
+
+Arch and its derivatives:
+
+```bash
+sudo pacman -S ffmpeg
+```
+
+Debian and Ubuntu derivatives:
+
+```bash
+sudo apt-get install ffmpeg
+```
+
+Fedora:
+
+```bash
+sudo dnf install ffmpeg
+```
+
 ## Usage
 
 First you need to created python virtual environment, so navigate to the project folder:
@@ -34,10 +56,16 @@ Create python _venv_:
 python -m venv venv
 ```
 
-Activate the _venv_:
+Activate the _venv_ on Linux:
 
 ```bash
 source venv/bin/activate
+```
+
+Activate the _venv_ on Windows:
+
+```bash
+venv\Scripts\activate.bat
 ```
 
 Install project dependencies:
